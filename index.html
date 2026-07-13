@@ -42,7 +42,7 @@
             transform: translateY(-4px);
         }
 
-        /* — decorative border — */
+        /* decorative border */
         .invitation::before {
             content: '';
             position: absolute;
@@ -52,7 +52,7 @@
             pointer-events: none;
         }
 
-        /* — corner flourishes — */
+        /* corner flourish */
         .invitation::after {
             content: '✦';
             position: absolute;
@@ -79,35 +79,15 @@
             margin-bottom: 0;
         }
 
-        /* ===== HEADER ===== */
-        .header {
+        /* ===== GREETING ===== */
+        .greeting {
             text-align: center;
-            margin-bottom: 16px;
-        }
-
-        .header__sub {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #b0957d;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-
-        .header__title {
             font-family: 'Great Vibes', cursive;
-            font-size: 48px;
+            font-size: 34px;
             color: #5a3e2e;
+            margin-bottom: 10px;
             font-weight: 400;
-            line-height: 1.1;
-        }
-
-        .header__title span {
-            display: inline-block;
-            background: linear-gradient(135deg, #8b6b56, #b48b72);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            line-height: 1.2;
         }
 
         /* ===== DIVIDER ===== */
@@ -135,10 +115,10 @@
         .body-text {
             text-align: center;
             color: #5e4a3c;
-            font-size: 15px;
-            line-height: 1.8;
+            font-size: 16px;
+            line-height: 1.9;
             font-weight: 400;
-            max-width: 440px;
+            max-width: 480px;
             margin: 0 auto;
         }
 
@@ -147,37 +127,19 @@
             font-weight: 600;
         }
 
-        .body-text .highlight {
-            color: #8b6b56;
-            font-weight: 500;
-        }
-
-        /* ===== PLACEHOLDER NAMES (generic) ===== */
-        .names-placeholder {
-            text-align: center;
+        .body-text .family {
+            display: block;
+            margin-top: 12px;
             font-family: 'Great Vibes', cursive;
-            font-size: 36px;
+            font-size: 28px;
             color: #4d3425;
             font-weight: 400;
-            margin: 8px 0 4px;
-            letter-spacing: 2px;
-            opacity: 0.8;
+            letter-spacing: 1px;
         }
 
-        .names-placeholder small {
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #b0957d;
-            display: block;
-            margin-top: 4px;
-            opacity: 0.7;
-        }
-
-        /* ===== DATE & VENUE ===== */
+        /* ===== DETAILS (date + times) ===== */
         .details {
-            margin: 24px 0 18px;
+            margin: 28px 0 10px;
             display: flex;
             flex-direction: column;
             gap: 14px;
@@ -189,9 +151,9 @@
             justify-content: center;
             gap: 12px;
             background: #f8f3ee;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 100px;
-            font-size: 14px;
+            font-size: 15px;
             color: #4d3425;
             font-weight: 500;
             transition: background 0.2s;
@@ -202,7 +164,7 @@
         }
 
         .detail-item .emoji {
-            font-size: 18px;
+            font-size: 20px;
             line-height: 1;
         }
 
@@ -212,46 +174,15 @@
             margin-right: 2px;
         }
 
-        /* ===== RSVP ===== */
-        .rsvp {
-            text-align: center;
-            margin: 24px 0 8px;
-            padding: 20px 20px 18px;
-            background: linear-gradient(135deg, #faf5f0, #f5ede6);
-            border-radius: 20px;
-            border: 1px solid rgba(200, 175, 155, 0.2);
-        }
-
-        .rsvp__label {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: #b0957d;
-            font-weight: 500;
-        }
-
-        .rsvp__phone {
-            font-size: 22px;
+        .detail-item .value {
             font-weight: 600;
-            color: #4d3425;
-            margin-top: 4px;
-            letter-spacing: 1px;
-        }
-
-        .rsvp__phone a {
-            color: #4d3425;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .rsvp__phone a:hover {
-            color: #8b6b56;
+            color: #3d2b1f;
         }
 
         /* ===== FOOTER ===== */
         .footer {
             text-align: center;
-            margin-top: 26px;
+            margin-top: 30px;
             font-size: 12px;
             color: #b8a494;
             letter-spacing: 2px;
@@ -267,13 +198,8 @@
         }
 
         @keyframes pulse {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         /* ===== RESPONSIVE ===== */
@@ -294,24 +220,8 @@
                 font-size: 14px;
             }
 
-            .header__title {
-                font-size: 34px;
-            }
-
-            .names-placeholder {
+            .greeting {
                 font-size: 28px;
-            }
-
-            .detail-item {
-                font-size: 13px;
-                padding: 8px 14px;
-                flex-wrap: wrap;
-                gap: 6px;
-                border-radius: 40px;
-            }
-
-            .rsvp__phone {
-                font-size: 18px;
             }
 
             .body-text {
@@ -319,14 +229,21 @@
                 line-height: 1.7;
             }
 
+            .body-text .family {
+                font-size: 24px;
+            }
+
+            .detail-item {
+                font-size: 13px;
+                padding: 10px 16px;
+                flex-wrap: wrap;
+                gap: 6px;
+                border-radius: 40px;
+            }
+
             .ornament {
                 font-size: 16px;
                 letter-spacing: 4px;
-            }
-
-            .header__sub {
-                font-size: 11px;
-                letter-spacing: 3px;
             }
         }
 
@@ -335,21 +252,17 @@
                 padding: 24px 14px 20px;
             }
 
-            .header__title {
-                font-size: 28px;
-            }
-
-            .names-placeholder {
+            .greeting {
                 font-size: 22px;
             }
 
-            .rsvp__phone {
-                font-size: 16px;
+            .body-text .family {
+                font-size: 20px;
             }
 
             .detail-item {
                 font-size: 12px;
-                padding: 6px 12px;
+                padding: 8px 12px;
             }
         }
     </style>
@@ -361,11 +274,8 @@
         <!-- top ornament -->
         <div class="ornament">✦ ✦ ✦</div>
 
-        <!-- header -->
-        <div class="header">
-            <div class="header__sub">To'yga taklif</div>
-            <h1 class="header__title"><span>Hurmat bilan</span></h1>
-        </div>
+        <!-- greeting -->
+        <div class="greeting">Assalamu Aleykum<br />Hurmatli mehmon</div>
 
         <!-- divider -->
         <div class="divider">
@@ -374,53 +284,31 @@
             <span class="divider__line"></span>
         </div>
 
-        <!-- generic names placeholder (remove or replace with your own) -->
-        <div class="names-placeholder">
-            Ism &amp; Ism
-            <small>— kelin va kuyov —</small>
+        <!-- main text -->
+        <div class="body-text">
+            Sizni farzandlarimizning nikoh toyi hamda nabiralarimizning
+            sunnat toylariga taklif qilamiz.
+            <span class="family">Saidov Xolmurod hoji ota oilasi</span>
         </div>
 
-        <!-- body -->
-        <p class="body-text">
-            Sizni <strong>bayramimiz</strong>ning eng muhim kunida
-            yonimizda bo'lishingizni <span class="highlight">chin dildan</span> taklif qilamiz.
-            <br />
-            Quvonchimizni biz bilan baham ko'ring!
-        </p>
-
-        <!-- details -->
+        <!-- details: date + times -->
         <div class="details">
-
+            <!-- DATE -->
             <div class="detail-item">
                 <span class="emoji">📅</span>
-                <span><span class="label">Sana:</span> 13-iyul, 2026</span>
+                <span><span class="label">Sana:</span> <span class="value">25-iyul</span></span>
             </div>
 
+            <!-- TIME 1 -->
             <div class="detail-item">
-                <span class="emoji">⏰</span>
-                <span><span class="label">Vaqt:</span> 18:00</span>
+                <span class="emoji">🍚</span>
+                <span><span class="label">Nahorgi osh:</span> <span class="value">soat 7:00</span></span>
             </div>
 
+            <!-- TIME 2 -->
             <div class="detail-item">
-                <span class="emoji">📍</span>
-                <span><span class="label">Manzil:</span> "New-Hill Group" to'yxonasi</span>
-            </div>
-
-            <div class="detail-item">
-                <span class="emoji">🍽️</span>
-                <span><span class="label">Dasturxon:</span> milliy taomlar &amp; choy</span>
-            </div>
-
-        </div>
-
-        <!-- rsvp -->
-        <div class="rsvp">
-            <div class="rsvp__label">Iltimos, tasdiqlang</div>
-            <div class="rsvp__phone">
-                <a href="tel:+998901234567">+998 90 123 45 67</a>
-            </div>
-            <div style="font-size:12px; color:#b0957d; margin-top:4px; letter-spacing:0.5px;">
-                yoki shu raqamga yozing
+                <span class="emoji">🌙</span>
+                <span><span class="label">To'y oqshomi:</span> <span class="value">soat 19:00</span></span>
             </div>
         </div>
 
