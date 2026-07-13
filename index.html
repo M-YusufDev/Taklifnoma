@@ -1,614 +1,438 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nikoh to‘yi — Taklifnoma</title>
-  <meta name="description" content="2026 yil 12 iyul — Oqsaroy to‘yxonasi, Peshku tumani">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Pinyon+Script&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --paper: #fbf9f4;
-      --paper-warm: #f6f1e7;
-      --sand: #ede5d3;
-      --gold: #b99855;
-      --gold-deep: #96773a;
-      --gold-soft: rgba(185, 152, 85, 0.35);
-      --olive: #6b6b4f;
-      --ink: #3d3529;
-      --ink-mute: #7a6f5e;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To'yga Taklifnoma</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf7f2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(245, 231, 220, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(235, 210, 190, 0.3) 0%, transparent 50%);
+        }
 
-    body {
-      min-height: 100vh;
-      font-family: "Playfair Display", Georgia, serif;
-      background:
-        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(185, 152, 85, 0.10), transparent 60%),
-        linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 30%, var(--sand) 100%);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
+        /* ===== CARD ===== */
+        .invitation {
+            max-width: 620px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 48px 36px 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08), 0 10px 30px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
 
-    .page {
-      max-width: 460px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 4rem;
-    }
+        .invitation:hover {
+            transform: translateY(-4px);
+        }
 
-    /* ---------- entrance animations ---------- */
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(26px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+        /* — decorative border — */
+        .invitation::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(180, 140, 110, 0.20);
+            border-radius: 24px;
+            pointer-events: none;
+        }
 
-    .anim { animation: rise 0.9s ease both; }
-    .anim-1 { animation-delay: 0.1s; }
-    .anim-2 { animation-delay: 0.3s; }
-    .anim-3 { animation-delay: 0.5s; }
+        /* — corner flourishes — */
+        .invitation::after {
+            content: '✦';
+            position: absolute;
+            top: 28px;
+            right: 36px;
+            font-size: 18px;
+            color: #c9ad93;
+            letter-spacing: 8px;
+            opacity: 0.5;
+        }
 
-    /* ---------- top monogram ---------- */
-    .monogram {
-      text-align: center;
-      margin-bottom: 1.6rem;
-    }
+        /* ===== ORNAMENT ===== */
+        .ornament {
+            text-align: center;
+            font-size: 20px;
+            color: #d4b8a0;
+            letter-spacing: 6px;
+            margin-bottom: 14px;
+            font-weight: 300;
+        }
 
-    .monogram__ring {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 74px;
-      height: 74px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      position: relative;
-    }
+        .ornament--bottom {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
 
-    .monogram__ring::before {
-      content: "";
-      position: absolute;
-      inset: 5px;
-      border: 1px solid var(--gold-soft);
-      border-radius: 50%;
-    }
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 16px;
+        }
 
-    .monogram__ring svg {
-      width: 34px;
-      height: 34px;
-      stroke: var(--gold-deep);
-    }
+        .header__sub {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #b0957d;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
 
-    .monogram__caption {
-      font-family: "Jost", sans-serif;
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-top: 0.9rem;
-      padding-left: 0.42em; /* optical centering for tracking */
-    }
+        .header__title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #5a3e2e;
+            font-weight: 400;
+            line-height: 1.1;
+        }
 
-    /* ---------- arch card ---------- */
-    .card {
-      position: relative;
-      background: #fffdf9;
-      border: 1px solid var(--gold-soft);
-      border-radius: 230px 230px 14px 14px;
-      padding: 4.5rem 1.75rem 2.75rem;
-      text-align: center;
-      box-shadow:
-        0 1px 2px rgba(61, 53, 41, 0.05),
-        0 14px 44px rgba(61, 53, 41, 0.10);
-    }
+        .header__title span {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b6b56, #b48b72);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 9px;
-      border: 1px solid var(--gold-soft);
-      border-radius: 222px 222px 8px 8px;
-      pointer-events: none;
-    }
+        /* ===== DIVIDER ===== */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 12px 0 16px;
+        }
 
-    @media (min-width: 420px) {
-      .card { padding: 5rem 2.4rem 3rem; }
-    }
+        .divider__line {
+            flex: 1;
+            max-width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #dcc9bb, transparent);
+        }
 
-    /* ---------- botanical sprig ---------- */
-    .sprig {
-      width: 92px;
-      height: 46px;
-      margin: 0 auto 1.1rem;
-      display: block;
-    }
+        .divider__icon {
+            color: #c9ad93;
+            font-size: 18px;
+        }
 
-    .sprig path, .sprig ellipse {
-      stroke: var(--olive);
-      fill: none;
-    }
+        /* ===== BODY TEXT ===== */
+        .body-text {
+            text-align: center;
+            color: #5e4a3c;
+            font-size: 15px;
+            line-height: 1.8;
+            font-weight: 400;
+            max-width: 440px;
+            margin: 0 auto;
+        }
 
-    .sprig .leaf { fill: rgba(107, 107, 79, 0.28); stroke: none; }
+        .body-text strong {
+            color: #3d2b1f;
+            font-weight: 600;
+        }
 
-    /* ---------- headline ---------- */
-    .script {
-      font-family: "Pinyon Script", cursive;
-      font-size: clamp(2.6rem, 11vw, 3.4rem);
-      font-weight: 400;
-      color: var(--gold-deep);
-      line-height: 1.15;
-      margin-bottom: 0.4rem;
-    }
+        .body-text .highlight {
+            color: #8b6b56;
+            font-weight: 500;
+        }
 
-    .headline-sub {
-      font-family: "Jost", sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      padding-left: 0.38em;
-      margin-bottom: 1.9rem;
-    }
+        /* ===== PLACEHOLDER NAMES (generic) ===== */
+        .names-placeholder {
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            color: #4d3425;
+            font-weight: 400;
+            margin: 8px 0 4px;
+            letter-spacing: 2px;
+            opacity: 0.8;
+        }
 
-    /* ---------- guest ---------- */
-    .guest {
-      margin-bottom: 1.9rem;
-    }
+        .names-placeholder small {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b0957d;
+            display: block;
+            margin-top: 4px;
+            opacity: 0.7;
+        }
 
-    .guest__hurmatli {
-      font-style: italic;
-      font-size: 1.05rem;
-      color: var(--ink-mute);
-      margin-bottom: 0.3rem;
-    }
+        /* ===== DATE & VENUE ===== */
+        .details {
+            margin: 24px 0 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
 
-    .guest__name {
-      font-size: clamp(1.7rem, 6.5vw, 2.05rem);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-    }
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #f8f3ee;
+            padding: 10px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+            color: #4d3425;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
 
-    .guest__rule {
-      width: 130px;
-      height: 1px;
-      margin: 0.75rem auto 0;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      position: relative;
-    }
+        .detail-item:hover {
+            background: #f2e8e0;
+        }
 
-    .guest__rule::after {
-      content: "";
-      position: absolute;
-      top: -2.5px;
-      left: 50%;
-      transform: translateX(-50%) rotate(45deg);
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-    }
+        .detail-item .emoji {
+            font-size: 18px;
+            line-height: 1;
+        }
 
-    /* ---------- invitation words ---------- */
-    .words {
-      font-size: clamp(1.06rem, 3.6vw, 1.18rem);
-      line-height: 1.95;
-      color: var(--ink-mute);
-      max-width: 320px;
-      margin: 0 auto 2.1rem;
-    }
+        .detail-item .label {
+            font-weight: 400;
+            color: #8b6b56;
+            margin-right: 2px;
+        }
 
-    .words em {
-      font-style: italic;
-      color: var(--ink);
-    }
+        /* ===== RSVP ===== */
+        .rsvp {
+            text-align: center;
+            margin: 24px 0 8px;
+            padding: 20px 20px 18px;
+            background: linear-gradient(135deg, #faf5f0, #f5ede6);
+            border-radius: 20px;
+            border: 1px solid rgba(200, 175, 155, 0.2);
+        }
 
-    /* ---------- date row ---------- */
-    .date-row {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      align-items: center;
-      gap: 0.9rem;
-      margin-bottom: 0.9rem;
-    }
+        .rsvp__label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #b0957d;
+            font-weight: 500;
+        }
 
-    .date-row__side {
-      font-family: "Jost", sans-serif;
-      font-size: 0.74rem;
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--ink);
-      position: relative;
-      padding: 0.55rem 0;
-    }
+        .rsvp__phone {
+            font-size: 22px;
+            font-weight: 600;
+            color: #4d3425;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
 
-    .date-row__side::before,
-    .date-row__side::after {
-      content: "";
-      position: absolute;
-      left: 12%;
-      right: 12%;
-      height: 1px;
-      background: var(--gold-soft);
-    }
+        .rsvp__phone a {
+            color: #4d3425;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-    .date-row__side::before { top: 0; }
-    .date-row__side::after  { bottom: 0; }
+        .rsvp__phone a:hover {
+            color: #8b6b56;
+        }
 
-    .date-row__num {
-      font-size: clamp(3.1rem, 13vw, 4rem);
-      font-weight: 500;
-      line-height: 1;
-      color: var(--gold-deep);
-    }
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            margin-top: 26px;
+            font-size: 12px;
+            color: #b8a494;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
 
-    .date-year {
-      font-family: "Jost", sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      padding-left: 0.34em;
-      margin-bottom: 1.4rem;
-    }
+        .footer .heart {
+            color: #d4a08a;
+            font-size: 14px;
+            display: inline-block;
+            animation: pulse 1.8s ease-in-out infinite;
+        }
 
-    .time-pill {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.55rem;
-      font-family: "Jost", sans-serif;
-      border: 1px solid var(--gold-soft);
-      border-radius: 999px;
-      padding: 0.55rem 1.5rem;
-      margin-bottom: 2.1rem;
-      background: rgba(185, 152, 85, 0.06);
-    }
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
 
-    .time-pill__time {
-      font-family: "Playfair Display", serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--ink);
-    }
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .invitation {
+                padding: 32px 20px 28px;
+                border-radius: 24px;
+            }
 
-    .time-pill__note {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-    }
+            .invitation::before {
+                inset: 8px;
+                border-radius: 18px;
+            }
 
-    /* ---------- divider ---------- */
-    .div-flourish {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.7rem;
-      margin: 0 auto 1.9rem;
-      color: var(--gold);
-    }
+            .invitation::after {
+                top: 20px;
+                right: 24px;
+                font-size: 14px;
+            }
 
-    .div-flourish::before,
-    .div-flourish::after {
-      content: "";
-      width: 64px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-soft));
-    }
+            .header__title {
+                font-size: 34px;
+            }
 
-    .div-flourish::after {
-      background: linear-gradient(90deg, var(--gold-soft), transparent);
-    }
+            .names-placeholder {
+                font-size: 28px;
+            }
 
-    .div-flourish svg {
-      width: 15px;
-      height: 15px;
-      fill: var(--gold);
-      opacity: 0.8;
-    }
+            .detail-item {
+                font-size: 13px;
+                padding: 8px 14px;
+                flex-wrap: wrap;
+                gap: 6px;
+                border-radius: 40px;
+            }
 
-    /* ---------- families ---------- */
-    .fam {
-      margin-bottom: 2.1rem;
-    }
+            .rsvp__phone {
+                font-size: 18px;
+            }
 
-    .fam__lead {
-      font-family: "Pinyon Script", cursive;
-      font-size: 1.75rem;
-      color: var(--gold-deep);
-      margin-bottom: 0.7rem;
-    }
+            .body-text {
+                font-size: 14px;
+                line-height: 1.7;
+            }
 
-    .fam__body {
-      font-size: 1.05rem;
-      line-height: 2;
-      color: var(--ink-mute);
-      max-width: 330px;
-      margin: 0 auto;
-    }
+            .ornament {
+                font-size: 16px;
+                letter-spacing: 4px;
+            }
 
-    .fam__body strong {
-      font-weight: 600;
-      color: var(--ink);
-    }
+            .header__sub {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+        }
 
-    /* ---------- venue ---------- */
-    .venue {
-      border-top: 1px solid var(--gold-soft);
-      padding-top: 1.9rem;
-    }
+        @media (max-width: 380px) {
+            .invitation {
+                padding: 24px 14px 20px;
+            }
 
-    .venue__label {
-      font-family: "Jost", sans-serif;
-      font-size: 0.66rem;
-      letter-spacing: 0.38em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      padding-left: 0.38em;
-      margin-bottom: 0.55rem;
-    }
+            .header__title {
+                font-size: 28px;
+            }
 
-    .venue__name {
-      font-size: clamp(1.4rem, 5vw, 1.65rem);
-      font-weight: 600;
-      color: var(--ink);
-    }
+            .names-placeholder {
+                font-size: 22px;
+            }
 
-    .venue__addr {
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--ink-mute);
-      margin-top: 0.25rem;
-    }
+            .rsvp__phone {
+                font-size: 16px;
+            }
 
-    .venue__btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1.3rem;
-      padding: 0.85rem 2.1rem;
-      font-family: "Jost", sans-serif;
-      font-size: 0.74rem;
-      font-weight: 500;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--paper);
-      background: var(--ink);
-      border-radius: 999px;
-      transition: background 0.3s, transform 0.25s, box-shadow 0.25s;
-      box-shadow: 0 6px 18px rgba(61, 53, 41, 0.22);
-    }
-
-    .venue__btn:hover {
-      background: var(--gold-deep);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(150, 119, 58, 0.32);
-    }
-
-    .venue__btn svg {
-      width: 15px;
-      height: 15px;
-      fill: currentColor;
-    }
-
-    /* ---------- countdown ---------- */
-    .count {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .count__title {
-      font-family: "Jost", sans-serif;
-      font-size: 0.66rem;
-      letter-spacing: 0.36em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      padding-left: 0.36em;
-      margin-bottom: 1.1rem;
-    }
-
-    .count__grid {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 0.45rem;
-    }
-
-    .count__cell {
-      min-width: 64px;
-      padding: 0.9rem 0.5rem 0.75rem;
-      background: #fffdf9;
-      border: 1px solid var(--gold-soft);
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(61, 53, 41, 0.07);
-    }
-
-    .count__num {
-      font-size: 1.6rem;
-      font-weight: 600;
-      line-height: 1;
-      color: var(--gold-deep);
-      font-variant-numeric: tabular-nums;
-    }
-
-    .count__lbl {
-      font-family: "Jost", sans-serif;
-      font-size: 0.56rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-mute);
-      margin-top: 0.35rem;
-    }
-
-    .count__sep {
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--gold-soft);
-      padding-top: 0.85rem;
-    }
-
-    /* ---------- closing ---------- */
-    .closing {
-      text-align: center;
-      margin-top: 2.4rem;
-    }
-
-    .closing__script {
-      font-family: "Pinyon Script", cursive;
-      font-size: 1.65rem;
-      color: var(--gold-deep);
-      line-height: 1.5;
-    }
-  </style>
+            .detail-item {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <main class="page">
 
-    <header class="monogram anim">
-      <span class="monogram__ring">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="9" cy="14" r="5.6"/>
-          <circle cx="15" cy="14" r="5.6"/>
-          <path d="M12 4.2 L10.2 6.6 L12 8.9 L13.8 6.6 Z"/>
-        </svg>
-      </span>
-      <p class="monogram__caption">Taklifnoma</p>
-    </header>
+    <div class="invitation">
 
-    <article class="card anim anim-1" aria-label="Nikoh to‘yi taklifnomasi">
+        <!-- top ornament -->
+        <div class="ornament">✦ ✦ ✦</div>
 
-      <svg class="sprig" viewBox="0 0 92 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M8 40 Q46 10 84 40" stroke-width="1.1"/>
-        <ellipse class="leaf" cx="20" cy="30.5" rx="6.5" ry="2.6" transform="rotate(-34 20 30.5)"/>
-        <ellipse class="leaf" cx="33" cy="22.5" rx="6.5" ry="2.6" transform="rotate(-22 33 22.5)"/>
-        <ellipse class="leaf" cx="59" cy="22.5" rx="6.5" ry="2.6" transform="rotate(22 59 22.5)"/>
-        <ellipse class="leaf" cx="72" cy="30.5" rx="6.5" ry="2.6" transform="rotate(34 72 30.5)"/>
-        <circle cx="46" cy="15.5" r="2.5" fill="#b99855" stroke="none"/>
-      </svg>
+        <!-- header -->
+        <div class="header">
+            <div class="header__sub">To'yga taklif</div>
+            <h1 class="header__title"><span>Hurmat bilan</span></h1>
+        </div>
 
-      <h1 class="script">Nikoh to‘yi</h1>
-      <p class="headline-sub">Aziz farzandlarimiz baxtiga</p>
+        <!-- divider -->
+        <div class="divider">
+            <span class="divider__line"></span>
+            <span class="divider__icon">✦</span>
+            <span class="divider__line"></span>
+        </div>
 
-      <div class="guest">
-        <p class="guest__hurmatli">Hurmatli</p>
-        <p class="guest__name">Mehmon</p>
-        <div class="guest__rule" aria-hidden="true"></div>
-      </div>
+        <!-- generic names placeholder (remove or replace with your own) -->
+        <div class="names-placeholder">
+            Ism &amp; Ism
+            <small>— kelin va kuyov —</small>
+        </div>
 
-      <p class="words">
-        Sizni aziz farzandlarimizning <em>nikoh to‘yi</em> munosabati bilan
-        yoziladigan dasturxonimizga samimiy taklif etamiz.
-      </p>
-
-      <div class="date-row" aria-label="2026 yil 12 iyul, yakshanba">
-        <span class="date-row__side">Iyul</span>
-        <span class="date-row__num">12</span>
-        <span class="date-row__side">Yaksh.</span>
-      </div>
-      <p class="date-year">2026 yil</p>
-
-      <div class="time-pill">
-        <span class="time-pill__time">19:00</span>
-        <span class="time-pill__note">Kechki bazm</span>
-      </div>
-
-      <div class="div-flourish" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.5 7.2H22l-6 4.5 2.3 7.3-6.3-4.5-6.3 4.5L8 13.7l-6-4.5h7.5z"/></svg>
-      </div>
-
-      <div class="fam">
-        <p class="fam__lead">Hurmat bilan</p>
-        <p class="fam__body">
-          <strong>Muhammad hoji bobo</strong> o‘g‘illari
-          <strong>Saidov Nodirjon</strong> oilasi hamda
-          <strong>Rustam bobo</strong> o‘g‘illari
-          <strong>Hamdamov Dehqon</strong> oilasi
+        <!-- body -->
+        <p class="body-text">
+            Sizni <strong>bayramimiz</strong>ning eng muhim kunida
+            yonimizda bo'lishingizni <span class="highlight">chin dildan</span> taklif qilamiz.
+            <br />
+            Quvonchimizni biz bilan baham ko'ring!
         </p>
-      </div>
 
-      <div class="venue">
-        <p class="venue__label">Manzil</p>
-        <p class="venue__name">«Oqsaroy» to‘yxonasi</p>
-        <p class="venue__addr">Buxoro viloyati, Peshku tumani</p>
-        <a
-          class="venue__btn"
-          href="https://yandex.uz/maps/?ll=64.399443%2C40.040270&mode=poi&poi%5Bpoint%5D=64.402994%2C40.036848&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D223983512790&z=15.56"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Xaritada ko‘rish
-        </a>
-      </div>
-    </article>
+        <!-- details -->
+        <div class="details">
 
-    <section class="count anim anim-2" aria-live="polite">
-      <p class="count__title">To‘ygacha qoldi</p>
-      <div class="count__grid">
-        <div class="count__cell">
-          <div class="count__num" id="days">—</div>
-          <div class="count__lbl">Kun</div>
+            <div class="detail-item">
+                <span class="emoji">📅</span>
+                <span><span class="label">Sana:</span> 13-iyul, 2026</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="emoji">⏰</span>
+                <span><span class="label">Vaqt:</span> 18:00</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="emoji">📍</span>
+                <span><span class="label">Manzil:</span> "New-Hill Group" to'yxonasi</span>
+            </div>
+
+            <div class="detail-item">
+                <span class="emoji">🍽️</span>
+                <span><span class="label">Dasturxon:</span> milliy taomlar &amp; choy</span>
+            </div>
+
         </div>
-        <span class="count__sep">:</span>
-        <div class="count__cell">
-          <div class="count__num" id="hours">—</div>
-          <div class="count__lbl">Soat</div>
+
+        <!-- rsvp -->
+        <div class="rsvp">
+            <div class="rsvp__label">Iltimos, tasdiqlang</div>
+            <div class="rsvp__phone">
+                <a href="tel:+998901234567">+998 90 123 45 67</a>
+            </div>
+            <div style="font-size:12px; color:#b0957d; margin-top:4px; letter-spacing:0.5px;">
+                yoki shu raqamga yozing
+            </div>
         </div>
-        <span class="count__sep">:</span>
-        <div class="count__cell">
-          <div class="count__num" id="minutes">—</div>
-          <div class="count__lbl">Daqiqa</div>
+
+        <!-- bottom ornament -->
+        <div class="ornament ornament--bottom">✦ ✦ ✦</div>
+
+        <!-- footer -->
+        <div class="footer">
+            <span class="heart">♥</span> &nbsp;Sizni kutamiz!&nbsp; <span class="heart">♥</span>
         </div>
-        <span class="count__sep">:</span>
-        <div class="count__cell">
-          <div class="count__num" id="seconds">—</div>
-          <div class="count__lbl">Soniya</div>
-        </div>
-      </div>
-    </section>
 
-    <footer class="closing anim anim-3">
-      <p class="closing__script">Baxtli kunimizda bizni sharaflang!</p>
-    </footer>
-  </main>
+    </div>
 
-  <script>
-    (function () {
-      var wedding = new Date("2026-07-12T18:00:00+05:00");
-      var els = {
-        days: document.getElementById("days"),
-        hours: document.getElementById("hours"),
-        minutes: document.getElementById("minutes"),
-        seconds: document.getElementById("seconds")
-      };
-
-      function pad(n) { return n < 10 ? "0" + n : String(n); }
-
-      function tick() {
-        var diff = wedding - new Date();
-        if (diff <= 0) {
-          els.days.textContent = els.hours.textContent =
-          els.minutes.textContent = els.seconds.textContent = "00";
-          return;
-        }
-        var s = Math.floor(diff / 1000);
-        var d = Math.floor(s / 86400); s -= d * 86400;
-        var h = Math.floor(s / 3600);  s -= h * 3600;
-        var m = Math.floor(s / 60);    s -= m * 60;
-        els.days.textContent    = pad(d);
-        els.hours.textContent   = pad(h);
-        els.minutes.textContent = pad(m);
-        els.seconds.textContent = pad(s);
-      }
-
-      tick();
-      setInterval(tick, 1000);
-    })();
-  </script>
 </body>
 </html>
